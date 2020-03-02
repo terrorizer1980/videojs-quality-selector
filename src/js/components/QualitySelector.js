@@ -77,10 +77,6 @@ module.exports = function(videojs) {
          var player = this.player(),
              sources = player.currentSources();
 
-         if (!sources || sources.length < 2) {
-            return [];
-         }
-
          return _.map(sources, function(source) {
             return new QualityOption(player, {
                source: source,
