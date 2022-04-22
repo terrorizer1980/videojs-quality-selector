@@ -76,6 +76,10 @@ module.exports = function(videojs) {
       createItems: function() {
          var player = this.player(),
              sources = player.currentSources();
+          
+         sources = sources.filter(function(element) {
+               return element.hidequalityoption == undefined;
+         });
 
          return _.map(sources, function(source) {
             return new QualityOption(player, {
